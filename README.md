@@ -1,4 +1,4 @@
-# Regenfass - Debuging
+# Regenfass - Debugging
 
 On development you often point to bugs and errors. To make it easier for us to find and fix them, we have integrated a debug mode into the Regenfass. This mode can be activated in the config file. The debug mode is only active if the Regenfass is started with the parameter `--debug` or `-d`. The debug mode is deactivated by default.
 
