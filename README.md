@@ -38,7 +38,7 @@ lib_deps = heltec/ESP32_LoRaWAN@^1.1.1
 
 More information [here](http://community.heltec.cn/t/example-for-esp32-lora-node-to-a-lora-gateway-via-lorawan-protocol-does-not-work/1051)
 
-#### Solution
+#### Solution 1
 
 ```c++
 #define LoRaWAN_DEBUG_LEVEL 1
@@ -49,6 +49,37 @@ More information [here](http://community.heltec.cn/t/example-for-esp32-lora-node
 #define WIFI_LED 25
 #define LoRa_LED 18
 ```
+
+#### Solution 2
+
+Custom board definition:
+```json
+{
+  "build": {
+    "core": "esp32",
+    "extra_flags": "-DLoRaWAN_DEBUG_LEVEL=1 -DACTIVE_REGION=LORAWAN_REGION_EU868 -DRST_LoRa=14 -DDIO0=26 -DDIO1=33 -DWIFI_LED=25 -DLoRa_LED=18",
+    "f_cpu": "240000000L",
+    "mcu": "esp32",
+    "variant": "heltec_wifi_lora_32_V2"
+  },
+  "frameworks": [
+    "arduino"
+  ],
+  "name": "Heltec WiFi LoRa 32",
+  "upload": {
+    "maximum_ram_size": 327680,
+    "maximum_size": 1310720,
+    "protocol": "espota",
+    "require_upload_port": true,
+    "speed": 921600
+  },
+  "url": "https://heltec.org/project/wifi-lora-32/",
+  "vendor": "Heltec Automation",
+  "version": "1.0.0"
+}
+```
+
+More information see [here](https://docs.platformio.org/en/latest/platforms/creating_board.html)
 
 ### Error: error: 'class McuClass' has no member named 'begin'
 
