@@ -79,7 +79,7 @@ Custom board definition:
 }
 ```
 
-More information see [here](https://docs.platformio.org/en/latest/platforms/creating_board.html)
+More information see [here](https://docs.platformio.org/en/latest/platforms/creating_board.html). For details, see existing boards as examples, available under `~/.platformio/platforms/espressif32/boards/`.
 
 ### Error: error: 'class McuClass' has no member named 'begin'
 
